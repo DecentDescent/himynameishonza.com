@@ -1,0 +1,160 @@
+@import "../../styles/variables";
+
+article {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 84px;
+
+  @media (max-width: 640px) {
+    flex-direction: column;
+    margin-bottom: 64px;
+  }
+}
+
+.date {
+  padding: 0 24px;
+
+  @media (max-width: 640px) {
+    padding: 0 0 12px 0;
+  }
+}
+
+.date__days,
+.date__year {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+
+  @media (max-width: 640px) {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+    text-align: left;
+  }
+}
+
+.date__days {
+  color: $color-text;
+}
+
+.date__year {
+  color: $color-subtext;
+}
+
+.content {
+  border-left: 1px solid $color-border;
+  padding-left: 48px;
+
+  @media (max-width: 640px) {
+    border-left: none;
+    padding-left: 0;
+  }
+}
+
+.content__headline {
+  h1 {
+    font-size: 32px;
+    color: $color-text;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+  }
+}
+
+.content__body {
+  max-width: 700px;
+  padding: 8px 0;
+
+  &.content__body--large {
+    max-width: 100%;
+  }
+
+  p {
+    font-size: 17px;
+    color: $color-text;
+    line-height: 1.8;
+    font-weight: 300;
+    margin: 16px 0;
+  }
+
+  figure {
+    padding: 0;
+    margin: 16px 0;
+    img {
+      width: 100%;
+      border-radius: 4px;
+      box-shadow: 0 0 8px 0 rgba($color-text, 0.4);
+    }
+
+    figcaption {
+      padding: 4px 0 0 0;
+
+      div {
+        display: flex;
+      }
+
+      svg {
+        width: 12px;
+        margin-right: 6px;
+        fill: $color-subtext;
+        margin-top: 2px;
+      }
+
+      .figcaption__primary {
+        color: $color-text;
+        font-size: 14px;
+      }
+
+      .figcaption__secondary {
+        color: $color-subtext;
+        padding-left: 18px;
+        font-size: 11px;
+      }
+    }
+  }
+}
+
+.content__categories {
+  ul {
+    margin: 8px 0 0 0;
+    padding: 0;
+    li {
+      display: inline-block;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 400;
+      box-sizing: border-box;
+      height: 28px;
+      padding: 2px 8px 0 8px;
+      text-transform: lowercase;
+      color: $color-subtext;
+      border: $color-subtext 1px dashed;
+      border-radius: 14px;
+      margin-right: 4px;
+      margin-bottom: 4px;
+      transition: all 0.24s;
+
+      &:hover {
+        color: $color-text;
+        border-color: $color-text;
+        background: $color-border;
+        border-style: solid;
+      }
+    }
+  }
+}
+
+.content__score {
+  display: flex;
+  color: $color-text;
+  font-size: 14px;
+  font-weight: 700;
+  margin: 16px 0;
+
+  svg {
+    width: 12px;
+    margin-right: 6px;
+    fill: $color-subtext;
+  }
+}

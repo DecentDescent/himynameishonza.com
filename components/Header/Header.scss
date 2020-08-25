@@ -1,0 +1,12 @@
+@import "../../styles/variables";
+
+header {
+  padding: 42px 0;
+  box-sizing: border-box;
+  border-bottom: 1px $color-border solid;
+  margin-bottom: 42px;
+
+  svg {
+    height: 42px;
+  }
+}
