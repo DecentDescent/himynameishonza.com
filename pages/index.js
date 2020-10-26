@@ -1,22 +1,17 @@
-import React, { Component } from "react";
-
-import "../styles/global.scss";
-
+import React from "react";
 import Head from "../components/Head";
 import Header from "../components/Header";
 import Article from "../components/Article";
-import Footer from "../components/Footer";
+import "../styles/global.scss";
 
-class Index extends Component {
-  render() {
-    return (
-      <main>
-        <Head />
-        <Header />
-        <Article />
-        <Footer />
-      </main>
-    );
-  }
-}
-export default Index;
+const IndexPage = () => {
+  return (
+    <>
+      <Head />
+      <Header />
+      <Article />
+    </>
+  );
+};
+
+export default IndexPage;

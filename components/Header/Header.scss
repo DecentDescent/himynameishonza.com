@@ -1,12 +1,60 @@
+@import "../../styles/typography";
 @import "../../styles/variables";
 
-header {
-  padding: 42px 0;
-  box-sizing: border-box;
-  border-bottom: 1px $color-border solid;
-  margin-bottom: 42px;
+.header {
+  border-bottom: 1px solid rgba($theme-light-text, 0.1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
 
-  svg {
-    height: 42px;
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 12px;
+    margin: 0 auto;
+  }
+
+  .header__navigation,
+  .header__info {
+    a {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        width: 24px;
+        height: 24px;
+        fill: $theme-light-text;
+      }
+
+      &:hover {
+        svg {
+          fill: $button-main;
+        }
+      }
+    }
+  }
+  .header__title {
+    h1 {
+      font-family: $font-secondary;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 24px;
+      letter-spacing: -1px;
+
+      span:after {
+        content: "·";
+        opacity: 0.2;
+        text-align: center;
+        padding: 0 12px;
+      }
+    }
   }
 }

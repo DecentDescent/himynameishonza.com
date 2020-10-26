@@ -4,12 +4,12 @@ export default () => (
   <Head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charSet="utf-8" />
-    <title>himynameishonza.com – Dobré ráno, poutníku</title>
+    <title>Hi My Name Is Honza</title>
     <meta
       name="description"
       content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dui leo, volutpat at arcu vitae, bibendum porta mauris. Nulla semper dolor vitae laoreet ornare."
     />
-    <meta property="og:title" content="himynameishonza.com" />
+    <meta property="og:title" content="Hi My Name Is Honza" />
     <meta
       property="og:description"
       content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dui leo, volutpat at arcu vitae, bibendum porta mauris. Nulla semper dolor vitae laoreet ornare."
