@@ -6,6 +6,7 @@ export default class Article extends React.Component {
     return (
       <article className={styles["article"]}>
         <section className={styles["article__hero"]}>
+          <div className={styles["hero__overlay"]} />
           <div className={styles["container"]}>
             <div className={styles["hero__info"]}>
               <p>
@@ -51,9 +52,9 @@ export default class Article extends React.Component {
             </p>
             <p>
               Konec filmu mi jen potvrdil to, co jsem si myslel celou dobu. A
-              sice, že Becky je velice labilní dítě, které by mělo ztrávit
-              zbytek svého života v ústavu – připoutáno k lůžku pod silnými
-              sedativy. Něco mi ale říká, že tohle asi pointa filmu být neměla.
+              sice, že Becky je labilní dítě, které by mělo ztrávit zbytek svého
+              života v ústavu – připoutáno k lůžku pod silnými sedativy. Něco mi
+              ale říká, že tohle asi pointa filmu být neměla.
             </p>
             <p>
               Film přiláká diváky na Kevina Jamese a i když bylo zajímavé vidět

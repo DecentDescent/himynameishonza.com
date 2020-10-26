@@ -16,7 +16,7 @@ class Header extends Component {
           </div>
           <div className={styles["header__title"]}>
             <h1>
-              <span>Hi My name is Honza</span>Film
+              Hi My name is Honza<span>Film</span>
             </h1>
           </div>
           <div className={styles["header__info"]}>
