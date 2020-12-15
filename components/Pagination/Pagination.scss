@@ -1,0 +1,40 @@
+@import "../../styles/variables";
+
+.pagination {
+  width: 100%;
+  padding: 50px 15px;
+  ul {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+    li {
+      display: inline-block;
+
+      a {
+        padding: 8px 10px;
+        border: 1px $color-grey solid;
+        border-radius: 4px;
+        margin: 0 8px;
+        text-decoration: none;
+        color: $color-grey;
+        font-family: "Noto Sans", sans-serif;
+        font-size: 13px;
+        font-weight: bold;
+        transition: all 0.24s;
+        display: block;
+
+        &.active,
+        &:hover {
+          background: lighten($color-dark, 15%);
+          color: $color-light;
+        }
+
+        &.active {
+          cursor: default;
+        }
+      }
+    }
+  }
+}

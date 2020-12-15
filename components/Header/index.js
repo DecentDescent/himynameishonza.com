@@ -11,27 +11,27 @@ export default class Header extends React.Component {
           <div className={styles["navigation__social"]}>
             <ul>
               <li>
-                <a href={process.env.URL_PATREON}>
+                <a href={process.env.URL_PATREON} rel="external">
                   <Icon icon="patreon" />
                 </a>
               </li>
               <li>
-                <a href={process.env.URL_TWITTER}>
+                <a href={process.env.URL_TWITTER} rel="external">
                   <Icon icon="twitter" />
                 </a>
               </li>
               <li>
-                <a href={process.env.URL_FACEBOOK}>
+                <a href={process.env.URL_FACEBOOK} rel="external">
                   <Icon icon="facebook" />
                 </a>
               </li>
               <li>
-                <a href={process.env.URL_INSTAGRAM}>
+                <a href={process.env.URL_INSTAGRAM} rel="external">
                   <Icon icon="instagram" />
                 </a>
               </li>
               <li className={styles["divider"]}>
-                <a href="#">
+                <a>
                   <Icon icon="search" />
                 </a>
               </li>

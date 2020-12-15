@@ -66,7 +66,7 @@ article.article {
       font-family: "Noto Sans", serif;
       text-transform: uppercase;
       font-weight: 400;
-      color: #97999c;
+      color: $color-grey;
       line-height: 1.8;
     }
   }
@@ -76,10 +76,36 @@ article.article {
     padding-top: 56.25%;
     position: relative;
     border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    background: url("https://codeless.co/thype/blog/wp-content/uploads/2018/12/b2.jpg");
-    background-size: cover;
-    background-position: center;
+    box-shadow: 0 2px 4px rgba($color-dark, 0.2);
+    background: rgba($color-light, 0.2);
+    animation: breathe 5s ease forwards infinite;
+
+    @keyframes breathe {
+      0% {
+        background: rgba($color-light, 0.05);
+      }
+      50% {
+        background: rgba($color-light, 0.1);
+      }
+      100% {
+        background: rgba($color-light, 0.05);
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    img {
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+      border-radius: 4px;
+    }
   }
 
   &:hover {
@@ -109,6 +135,48 @@ article.article {
 
     .content__body p {
       font-size: 18px;
+    }
+  }
+
+  &.article--detail {
+    width: 100%;
+    max-width: 960px;
+    position: relative;
+    box-sizing: border-box;
+    display: block;
+    margin: 0 auto;
+    padding: 30px;
+    cursor: initial;
+
+    &:hover {
+      background: initial;
+    }
+
+    .content__title {
+      h1 {
+        text-align: center;
+        font-size: 64px;
+      }
+    }
+    .content__datetime {
+      text-align: center;
+      padding: 0;
+    }
+
+    .article__image {
+      margin: 0 0 30px 0;
+    }
+
+    .content__body {
+      p {
+        font-size: 16px;
+        max-width: 70ch;
+        font-family: "Noto Sans", serif;
+        font-weight: 400;
+        color: $color-white;
+        line-height: 1.8;
+        margin: 24px auto;
+      }
     }
   }
 }

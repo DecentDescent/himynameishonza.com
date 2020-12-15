@@ -3,6 +3,10 @@ import BlockContent from "@sanity/block-content-to-react";
 import imageUrlBuilder from "@sanity/image-url";
 import sanityClient from "@sanity/client";
 import styles from "./Article.scss";
+import Image from 'next/image'
+import Link from 'next/link'
+import Fade from 'react-reveal/Fade';
+import classnames from 'classnames';
 
 const config = {
   projectId: "bm7iwd96",
@@ -49,22 +53,41 @@ const dateFormater = (date) => {
   return d.getDate() + ". " + month[d.getMonth()] + " " + d.getFullYear();
 };
 
-export const ArticleDetail = ({ post, type }) => (
-  <>
-    {type === "recenze" ? (
-      <article className={styles["article--review"]}>
-        <h1>{post.title}</h1>
-        <h2>{post.publishedAt}</h2>
-        <BlockContent blocks={post.body} serializers={serializers} />
-      </article>
-    ) : (
-      <h1>Tohle neni recenze</h1>
-    )}
-  </>
+export const ArticleDetail = ({ post }) => (
+  <article className={classnames(styles["article"], styles['article--detail'])}>
+  <div className={styles["article__content"]}>
+    <div className={styles["content__title"]}>
+      <h1>{post.title}</h1>
+    </div>
+    <div className={styles["content__datetime"]}>
+      {dateFormater(post.publishedAt)} – BRZKÉ RÁNO
+    </div>
+    </div>
+
+    <div
+    className={styles["article__image"]}
+  >
+     <Image
+      alt="Image"
+      src={urlFor(post.poster).width().url()}
+      layout="fill"
+      objectFit="cover"
+      quality={process.env.IMAGE_QUALITY}
+      loading="lazy"
+    />
+  </div>
+    <div className={styles["article__content"]}>
+    <div className={styles["content__body"]}>
+      <BlockContent blocks={post.body} serializers={serializers} />
+    </div>
+  </div>
+  
+</article>
 );
 
 export const ArticleHome = ({ post }) => (
-  <article className={styles["article"]}>
+  <Link href={post.slug.current}>
+<article className={styles["article"]}>
     <div className={styles["article__content"]}>
       <div className={styles["content__category"]}>Povídky</div>
       <div className={styles["content__title"]}>
@@ -79,10 +102,16 @@ export const ArticleHome = ({ post }) => (
     </div>
     <div
       className={styles["article__image"]}
-      style={{
-        background: "url(" + urlFor(post.poster).url() + ")",
-        backgroundSize: "cover",
-      }}
-    ></div>
+    >
+       <Image
+        alt="Image"
+        src={urlFor(post.poster).width().url()}
+        layout="fill"
+        objectFit="cover"
+        quality={process.env.IMAGE_QUALITY}
+        loading="lazy"
+      />
+    </div>
   </article>
+  </Link>
 );

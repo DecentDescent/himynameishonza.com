@@ -1,15 +1,19 @@
 import { ArticleHome, ArticleDetail } from "../Article";
 import Head from "../Head";
 import Header from "../Header";
+import Pagination from "../Pagination";
+import Footer from "../Footer";
 export class LayoutHome extends React.Component {
   render() {
     return (
       <main>
         <Head />
         <Header />
-        {this.props.data.map((p) => (
-          <ArticleHome key={p.order} post={p} />
+        {this.props.data.map((p, index) => (
+          <ArticleHome key={index} post={p} />
         ))}
+        <Pagination />
+        <Footer />
       </main>
     );
   }
@@ -18,13 +22,15 @@ export class LayoutHome extends React.Component {
 export class LayoutPost extends React.Component {
   render() {
     return (
-      <>
+      <main>
         <Head
           title={this.props.data.metaTitle}
           excerpt={this.props.data.metaDescription}
         />
-        <ArticleDetail type="story" post={this.props.data} />
-      </>
+        <Header />
+        <ArticleDetail post={this.props.data} />
+        <Footer />
+      </main>
     );
   }
 }
