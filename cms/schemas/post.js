@@ -24,6 +24,29 @@ export default {
       of: [{ type: "reference", to: { type: "kategorie" } }],
     },
     {
+      title: "Poster",
+      name: "poster",
+      type: "image",
+      options: {
+        hotspot: true, // <-- Defaults to false
+      },
+      fields: [
+        {
+          name: "caption",
+          type: "string",
+          title: "Popis",
+          options: {
+            isHighlighted: true,
+          },
+        },
+        {
+          name: "attribution",
+          type: "string",
+          title: "Attribution",
+        },
+      ],
+    },
+    {
       name: "publishedAt",
       title: "Published at",
       type: "datetime",
@@ -34,7 +57,17 @@ export default {
         calendarTodayLabel: "Dnes",
       },
     },
+    {
+      name: "metaTitle",
+      title: "META Title",
+      type: "string",
+    },
 
+    {
+      name: "metaDescription",
+      title: "META Description",
+      type: "string",
+    },
     {
       name: "excerpt",
       title: "Excerpt",

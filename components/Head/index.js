@@ -1,18 +1,29 @@
 import Head from "next/head";
 
-export default () => (
+export default (props) => (
   <Head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charSet="utf-8" />
-    <title>Hi My Name Is Honza</title>
+    <title>
+      {props.title
+        ? props.title + " – Hi My Name Is Honza"
+        : "Hi My Name Is Honza"}
+    </title>
     <meta
       name="description"
-      content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dui leo, volutpat at arcu vitae, bibendum porta mauris. Nulla semper dolor vitae laoreet ornare."
+      content={props.excerpt ? props.excerpt : "Hi My Name Is Honza"}
     />
-    <meta property="og:title" content="Hi My Name Is Honza" />
+    <meta
+      property="og:title"
+      content={
+        props.title
+          ? props.title + " – Hi My Name Is Honza"
+          : "Hi My Name Is Honza"
+      }
+    />
     <meta
       property="og:description"
-      content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dui leo, volutpat at arcu vitae, bibendum porta mauris. Nulla semper dolor vitae laoreet ornare."
+      content={props.excerpt ? props.excerpt : "Hi My Name Is Honza"}
     />
     <meta property="og:image" content="/static/og.jpg" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />

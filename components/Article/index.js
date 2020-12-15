@@ -1,69 +1,88 @@
 import React from "react";
+import BlockContent from "@sanity/block-content-to-react";
+import imageUrlBuilder from "@sanity/image-url";
+import sanityClient from "@sanity/client";
 import styles from "./Article.scss";
 
-export default class Article extends React.Component {
-  render() {
-    return (
-      <article className={styles["article"]}>
-        <section className={styles["article__hero"]}>
-          <div className={styles["hero__overlay"]} />
-          <div className={styles["container"]}>
-            <div className={styles["hero__info"]}>
-              <p>
-                <span>Pondělí 26. 10. 2020</span>
-                Film
-              </p>
-            </div>
+const config = {
+  projectId: "bm7iwd96",
+  dataset: "production",
+  token:
+    "skXS4ZQo2H9Vkxu2iCYGxoOn3aEaO76L9Low56GBPXd4nyvHR3fwVnvxFowBpbw5WPmvqsV9yoZaXi1g4VOLQ79UzwZsLXKU2QqXxFW8wcVZa3LTmO6mhkmBI8L017T3fs5erHrQmUH5LssnW0vglfTKt8GiDeEtj9Bje6GOLYwZFHkj1AHp",
+};
 
-            <div className={styles["hero__title"]}>
-              <h1>Becky</h1>
-            </div>
+const client = sanityClient(config);
+const builder = imageUrlBuilder(client);
 
-            <div className={styles["hero__excerpt"]}>
-              <h2>
-                Říct, že jsem se na tenhle film těšil by bylo trochu moc, ale
-                jakmile se mi dostal do hledáčku trailer, přidal jsem si Becky
-                na seznam to-watch, už jen kvůli Kevinu Jamesovi.
-              </h2>
-            </div>
-          </div>
-        </section>
-
-        <section className={styles["article__body"]}>
-          <div className={styles["container"]}>
-            <p>
-              Becky je další počin režisérské dvojice Johnattana Milotta a
-              Caryho Murniona, kteří už mají za sebou dva rakovinotvorné filmy
-              (Bushwick, Cooties). Tentokrát se jedná o klasickou vengeance
-              vyvražďovačku, kde na jedné straně stojí mladá Becky a její
-              tatínek Jeff Winger (a další rodinní příslušníci – jsou ale
-              natolik zbyteční, že je tu nemá cenu ani vyjmenovávat), na druhé
-              čtyři uprchlí vězni, kterým šéfuje Kevin James se svastikou na
-              temeni. Ten se rozhodne kvůli bezcenné cetce na dům Becky
-              podniknout starou dobrou home invasion, protože... protože proč
-              ne, že jo.
-            </p>
-            <p>
-              Scénář byl pravděpodobně napsán za jeden večer jako domácí úkol
-              prvňáčka. Postavy si libují v násilí, které je sice velmi
-              realisticky ztvárněné, divákovi už ale není vysvětleno, proč se k
-              němu jednotlivé postavy uchylují. Jasný, náckové jsou špatný, ale
-              c'mon!
-            </p>
-            <p>
-              Konec filmu mi jen potvrdil to, co jsem si myslel celou dobu. A
-              sice, že Becky je labilní dítě, které by mělo ztrávit zbytek svého
-              života v ústavu – připoutáno k lůžku pod silnými sedativy. Něco mi
-              ale říká, že tohle asi pointa filmu být neměla.
-            </p>
-            <p>
-              Film přiláká diváky na Kevina Jamese a i když bylo zajímavé vidět
-              ho ve vážné roli, Becky je natolik stupidní počin, že ho brát
-              vážně vlastně stejně nejde.
-            </p>
-          </div>
-        </section>
-      </article>
-    );
-  }
+function urlFor(source) {
+  return builder.image(source);
 }
+
+const serializers = {
+  types: {
+    code: (props) => (
+      <pre data-language={props.node.language}>
+        <code>{props.node.code}</code>
+      </pre>
+    ),
+  },
+};
+
+const dateFormater = (date) => {
+  const month = new Array(
+    "Ledna",
+    "Února",
+    "Března",
+    "Dubna",
+    "Května",
+    "Června",
+    "Července",
+    "Srpna",
+    "Září",
+    "Října",
+    "Listopadu",
+    "Prosince"
+  );
+
+  const d = new Date(date);
+
+  return d.getDate() + ". " + month[d.getMonth()] + " " + d.getFullYear();
+};
+
+export const ArticleDetail = ({ post, type }) => (
+  <>
+    {type === "recenze" ? (
+      <article className={styles["article--review"]}>
+        <h1>{post.title}</h1>
+        <h2>{post.publishedAt}</h2>
+        <BlockContent blocks={post.body} serializers={serializers} />
+      </article>
+    ) : (
+      <h1>Tohle neni recenze</h1>
+    )}
+  </>
+);
+
+export const ArticleHome = ({ post }) => (
+  <article className={styles["article"]}>
+    <div className={styles["article__content"]}>
+      <div className={styles["content__category"]}>Povídky</div>
+      <div className={styles["content__title"]}>
+        <h1>{post.title}</h1>
+      </div>
+      <div className={styles["content__body"]}>
+        <BlockContent blocks={post.excerpt} serializers={serializers} />
+      </div>
+      <div className={styles["content__datetime"]}>
+        {dateFormater(post.publishedAt)} – BRZKÉ RÁNO
+      </div>
+    </div>
+    <div
+      className={styles["article__image"]}
+      style={{
+        background: "url(" + urlFor(post.poster).url() + ")",
+        backgroundSize: "cover",
+      }}
+    ></div>
+  </article>
+);
