@@ -145,13 +145,8 @@ article.article {
             align-items: center;
             justify-content: center;
             width: 48px;
-            flex-shrink: 0;
             height: 48px;
-            border-radius: 50%;
             margin: 6px 0;
-            border: 1px solid $color-border;
-            cursor: pointer;
-            transition: all 0.24s;
 
             a {
               justify-content: center;
@@ -159,6 +154,19 @@ article.article {
               display: flex;
               width: 100%;
               height: 100%;
+              border-radius: 50%;
+              border: 1px solid $color-border;
+              transition: all 0.24s;
+              flex-shrink: 0;
+
+              &:hover {
+                background: $color-coal;
+                box-shadow: 0 1px 3px rgba($color-black, 0.4);
+
+                svg {
+                  fill: $color-white;
+                }
+              }
             }
 
             &:first-child {
@@ -174,15 +182,6 @@ article.article {
               width: 20px;
               height: 20px;
               transition: fill 0.24s;
-            }
-
-            &:hover {
-              background: $color-coal;
-              box-shadow: 0 1px 3px rgba($color-black, 0.4);
-
-              svg {
-                fill: $color-white;
-              }
             }
           }
         }
@@ -306,13 +305,8 @@ article.article {
           align-items: center;
           justify-content: center;
           width: 48px;
-          flex-shrink: 0;
           height: 48px;
-          border-radius: 50%;
           margin: 0 6px;
-          border: 1px solid $color-border;
-          cursor: pointer;
-          transition: all 0.24s;
 
           a {
             justify-content: center;
@@ -320,6 +314,19 @@ article.article {
             display: flex;
             width: 100%;
             height: 100%;
+            flex-shrink: 0;
+            border-radius: 50%;
+            border: 1px solid $color-border;
+            transition: all 0.24s;
+
+            &:hover {
+              background: $color-coal;
+              box-shadow: 0 1px 3px rgba($color-black, 0.4);
+
+              svg {
+                fill: $color-white;
+              }
+            }
           }
 
           &:first-child {
@@ -335,15 +342,6 @@ article.article {
             width: 20px;
             height: 20px;
             transition: fill 0.24s;
-          }
-
-          &:hover {
-            background: $color-coal;
-            box-shadow: 0 1px 3px rgba($color-black, 0.4);
-
-            svg {
-              fill: $color-white;
-            }
           }
         }
       }
