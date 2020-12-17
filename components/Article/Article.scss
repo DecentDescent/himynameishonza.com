@@ -12,7 +12,7 @@ article.article {
 
       svg {
         fill: $color-light-grey;
-        width: 48px;
+        width: 64px;
       }
     }
 
@@ -38,17 +38,24 @@ article.article {
       text-transform: uppercase;
       letter-spacing: 1px;
       font-size: 12px;
+      line-height: 1.5;
+      max-width: 50ch;
+      margin: 0 auto;
       color: $color-dark-grey;
 
       span {
         color: $color-border;
-        margin: 0 4px;
+        margin: 0 8px;
       }
     }
 
     .header__hero {
       width: 100%;
-      margin: 42px 0;
+      margin: 42px auto;
+
+      @media (max-width: 1400px) {
+        max-width: 860px;
+      }
 
       figure {
         width: 100%;
@@ -103,14 +110,14 @@ article.article {
 
   .article__main {
     position: relative;
-    max-width: 600px;
+    max-width: 550px;
     margin: 0 auto;
 
     .main__sideinfo {
       position: absolute;
       width: 64px;
       top: 10px;
-      left: -92px;
+      left: -100px;
       border-top: 3px solid #5ea8b9;
       padding-top: 16px;
       text-align: center;
@@ -139,10 +146,11 @@ article.article {
         }
 
         &.sideinfo__date--mobile {
-          font-family: $font-primary;
-          color: $color-coal;
-          font-size: 42px;
-          margin-bottom: 4px;
+          font-family: $font-secondary;
+          color: $color-dark-grey;
+          font-size: 14px;
+          text-transform: uppercase;
+          font-weight: bold;
 
           @media (min-width: 871px) {
             display: none;
@@ -178,6 +186,7 @@ article.article {
               border: 1px solid $color-border;
               transition: all 0.24s;
               flex-shrink: 0;
+              cursor: pointer;
 
               &:hover {
                 background: $color-coal;
@@ -238,17 +247,22 @@ article.article {
     }
 
     p {
-      font-size: 17px;
+      font-size: 18px;
       font-family: $font-tertiary;
       color: $color-coal;
       margin: 24px auto;
-      line-height: 1.6;
+      line-height: 1.8;
+    }
+
+    &.article__main--404 {
+      padding-top: 40px;
+      text-align: center;
     }
   }
 
   .article__footer {
     max-width: 350px;
-    margin: 72px auto 64px;
+    margin: 128px auto 64px;
 
     .footer__comments {
       border-top: $color-border 1px solid;
@@ -329,6 +343,7 @@ article.article {
             border-radius: 50%;
             border: 1px solid $color-border;
             transition: all 0.24s;
+            cursor: pointer;
 
             &:hover {
               background: $color-coal;

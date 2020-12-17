@@ -6,24 +6,24 @@ const Index = (props) => (
     <meta charSet="utf-8" />
     <title>
       {props.title
-        ? props.title + " – Hi My Name Is Honza"
-        : "Hi My Name Is Honza"}
+        ? props.title + " – Hi My Name is Honza"
+        : "Hi My Name is Honza"}
     </title>
     <meta
       name="description"
-      content={props.excerpt ? props.excerpt : "Hi My Name Is Honza"}
+      content={props.excerpt ? props.excerpt : "Hi My Name is Honza"}
     />
     <meta
       property="og:title"
       content={
         props.title
-          ? props.title + " – Hi My Name Is Honza"
+          ? props.title + " – Hi My Name is Honza"
           : "Hi My Name Is Honza"
       }
     />
     <meta
       property="og:description"
-      content={props.excerpt ? props.excerpt : "Hi My Name Is Honza"}
+      content={props.excerpt ? props.excerpt : "Hi My Name is Honza"}
     />
     <meta property="og:image" content="/static/og.jpg" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
