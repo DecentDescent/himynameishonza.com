@@ -2,6 +2,7 @@ import { withRouter, useRouter } from "next/router";
 import { getPost } from "../api/posts";
 import { useState, useEffect } from "react";
 import { LayoutPost } from "../components/Layout";
+import "../styles/global.scss";
 
 const Post = ({ data }) => {
   const [postData, setData] = useState(data);

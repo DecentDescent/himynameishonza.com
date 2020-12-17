@@ -5,60 +5,23 @@ export default class Header extends React.Component {
     return (
       <header className={styles["header"]}>
         <div className={styles["header__logo"]}>
-          <h1>Hi My Name is Honza</h1>
+          <svg viewBox="0 0 42 42">
+            <g fill-rule="evenodd" transform="translate(-12 -12)">
+              <path d="m30.3157895 12.6315789h5.6842105c1.0464343 0 1.8947368.8483026 1.8947368 1.8947369v13.2631579c0 1.0464342-.8483025 1.8947368-1.8947368 1.8947368h-5.6842105c-1.0464343 0-1.8947369-.8483026-1.8947369-1.8947368v-13.2631579c0-1.0464343.8483026-1.8947369 1.8947369-1.8947369z" />
+              <path d="m30.3157895 36h5.6842105c1.0464343 0 1.8947368.8483026 1.8947368 1.8947368v13.2631579c0 1.0464343-.8483025 1.8947369-1.8947368 1.8947369h-5.6842105c-1.0464343 0-1.8947369-.8483026-1.8947369-1.8947369v-13.2631579c0-1.0464342.8483026-1.8947368 1.8947369-1.8947368z" />
+              <path d="m46.1052632 21.4736842h5.6842105c1.0464342 0 1.8947368.8483026 1.8947368 1.8947369v19.5789473c0 1.0464343-.8483026 1.8947369-1.8947368 1.8947369h-5.6842105c-1.0464343 0-1.8947369-.8483026-1.8947369-1.8947369v-19.5789473c0-1.0464343.8483026-1.8947369 1.8947369-1.8947369z" />
+              <path d="m14.5263158 21.4736842h5.6842105c1.0464343 0 1.8947369.8483026 1.8947369 1.8947369v19.5789473c0 1.0464343-.8483026 1.8947369-1.8947369 1.8947369h-5.6842105c-1.0464343 0-1.8947369-.8483026-1.8947369-1.8947369v-19.5789473c0-1.0464343.8483026-1.8947369 1.8947369-1.8947369z" />
+            </g>
+          </svg>
         </div>
-        <div className={styles["header__navigation"]}>
-          <div className={styles["navigation__social"]}>
-            <ul>
-              <li>
-                <a href={process.env.URL_PATREON} rel="external">
-                  <Icon icon="patreon" />
-                </a>
-              </li>
-              <li>
-                <a href={process.env.URL_TWITTER} rel="external">
-                  <Icon icon="twitter" />
-                </a>
-              </li>
-              <li>
-                <a href={process.env.URL_FACEBOOK} rel="external">
-                  <Icon icon="facebook" />
-                </a>
-              </li>
-              <li>
-                <a href={process.env.URL_INSTAGRAM} rel="external">
-                  <Icon icon="instagram" />
-                </a>
-              </li>
-              <li className={styles["divider"]}>
-                <a>
-                  <Icon icon="search" />
-                </a>
-              </li>
-            </ul>
-          </div>
-          <nav className={styles["navigation__categories"]}>
-            <ul>
-              <li>
-                <a href="/kategories/film">Film</a>
-              </li>
-              <li>
-                <a href="/kategories/hudba">Hudba</a>
-              </li>
-              <li>
-                <a href="/kategories/hry">Hry</a>
-              </li>
-              <li>
-                <a href="/kategories/povidky">Povídky</a>
-              </li>
-              <li>
-                <a href="/kategories/blog">Blog</a>
-              </li>
-              <li>
-                <a href="/kategories/foto">Foto</a>
-              </li>
-            </ul>
-          </nav>
+        <div className={styles["header__nav"]}>
+          <svg viewBox="0 0 27 24">
+            <path
+              d="m23.8897059 21.1538462c.6213203 0 1.125.46637 1.125 1.0416666v.8012821c0 .5752966-.5036797 1.0416666-1.125 1.0416666h-20.59615386c-.62132035 0-1.125-.46637-1.125-1.0416666v-.8012821c0-.5752966.50367965-1.0416666 1.125-1.0416666zm1.9852941-9.6955129c.6213203 0 1.125.4663701 1.125 1.0416667v.8012821c0 .5752966-.5036797 1.0416666-1.125 1.0416666h-24.75c-.62132034 0-1.125-.46637-1.125-1.0416666v-.8012821c0-.5752966.50367966-1.0416667 1.125-1.0416667zm-1.9852941-10.41666663c.6213203 0 1.125.46637005 1.125 1.04166666v.80128205c0 .57529662-.5036797 1.04166667-1.125 1.04166667h-20.59615386c-.62132035 0-1.125-.46637005-1.125-1.04166667v-.80128205c0-.57529661.50367965-1.04166666 1.125-1.04166666z"
+              fill-rule="evenodd"
+              transform="translate(0 -1)"
+            />
+          </svg>
         </div>
       </header>
     );

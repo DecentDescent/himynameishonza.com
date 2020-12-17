@@ -1,116 +1,55 @@
 @import "../../styles/variables";
 
 .header {
-  font-family: "Noto Sans", sans-serif;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 42px 30px;
-  border-bottom: 1px solid #2e3238;
+  margin-bottom: 64px;
 
-  .header__logo {
-    h1 {
-      margin: 0;
-      font-size: 42px;
-      color: #9c9ea1;
-      font-weight: 700;
+  .header__logo,
+  .header__nav {
+    width: 92px;
+    height: 92px;
+    background-color: $color-coal;
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.24s;
+
+    svg {
+      fill: $color-white;
+    }
+
+    &:hover {
+      background: $color-dark-grey;
+    }
+
+    @media (max-width: 870px) {
+      width: 64px;
+      height: 64px;
     }
   }
 
-  .header__navigation {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
+  .header__logo {
+    left: 0;
+    border-bottom-right-radius: 20px;
 
-    .navigation__social {
-      text-align: right;
+    svg {
+      width: 42px;
 
-      ul {
-        list-style: none;
-        padding: 4px 0;
-        margin: 0;
-        display: flex;
-
-        li {
-          width: 32px;
-          height: 32px;
-          margin: 0 4px;
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
-
-          a {
-            display: block;
-            padding: 4px;
-          }
-
-          svg {
-            width: 24px;
-            width: 24px;
-            fill: $color-white;
-            transition: all 0.24s;
-          }
-
-          &:hover svg {
-            fill: $color-orange;
-          }
-
-          &.divider {
-            margin: 0 16px;
-            &:before {
-              content: "|";
-              font-size: 16px;
-              margin: 0 8px;
-              color: #717478;
-              opacity: 0.5;
-            }
-          }
-        }
+      @media (max-width: 870px) {
+        width: 24px;
       }
     }
+  }
 
-    .navigation__categories {
-      padding: 0;
-      margin: 0;
+  .header__nav {
+    right: 0;
+    border-bottom-left-radius: 20px;
 
-      ul {
-        list-style: none;
-        text-align: right;
-        padding: 4px 0;
-        margin: 0;
-
-        li {
-          display: inline-block;
-
-          a {
-            color: $color-white;
-            text-decoration: none;
-            text-transform: uppercase;
-            padding: 8px 12px;
-            font-weight: 700;
-            font-size: 14px;
-            transition: all 0.24s;
-
-            &:hover {
-              color: $color-orange;
-            }
-          }
-
-          &:after {
-            content: "|";
-            margin: 0;
-            font-size: 14px;
-            color: #717478;
-            opacity: 0.5;
-          }
-          &:last-child:after {
-            display: none;
-          }
-        }
-      }
+    svg {
+      width: 24px;
     }
   }
 }

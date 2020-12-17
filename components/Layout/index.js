@@ -6,15 +6,16 @@ import Footer from "../Footer";
 export class LayoutHome extends React.Component {
   render() {
     return (
-      <main>
+      <>
         <Head />
         <Header />
-        {this.props.data.map((p, index) => (
-          <ArticleHome key={index} post={p} />
-        ))}
-        <Pagination />
+        <main>
+          {this.props.data.map((p, index) => (
+            <ArticleHome key={index} post={p} />
+          ))}
+        </main>
         <Footer />
-      </main>
+      </>
     );
   }
 }
