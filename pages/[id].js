@@ -28,7 +28,6 @@ Post.getInitialProps = async ({ req }) => {
   const res = await getPost(id);
   const json = await res.json();
   const data = json.result[0];
-  console.log("SERVER!");
   return { data };
 };
 

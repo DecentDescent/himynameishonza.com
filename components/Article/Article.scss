@@ -108,7 +108,7 @@ article.article {
 
     .main__sideinfo {
       position: absolute;
-      width: 48px;
+      width: 64px;
       top: 10px;
       left: -92px;
       border-top: 3px solid #5ea8b9;
@@ -116,17 +116,37 @@ article.article {
       text-align: center;
 
       .sideinfo__date {
-        font-family: $font-primary;
-        color: $color-coal;
-        font-size: 42px;
-        margin-bottom: 4px;
+        &.sideinfo__date--desktop {
+          font-family: $font-primary;
+          color: $color-coal;
+          font-size: 42px;
+          margin-bottom: 4px;
 
-        span {
-          font-family: $font-secondary;
-          font-size: 14px;
-          letter-spacing: 2px;
-          font-weight: bold;
-          color: $color-dark-grey;
+          span {
+            font-family: $font-secondary;
+            font-size: 14px;
+            letter-spacing: 1px;
+            font-weight: bold;
+            color: $color-dark-grey;
+            text-transform: uppercase;
+            display: block;
+            padding-top: 8px;
+          }
+
+          @media (max-width: 870px) {
+            display: none;
+          }
+        }
+
+        &.sideinfo__date--mobile {
+          font-family: $font-primary;
+          color: $color-coal;
+          font-size: 42px;
+          margin-bottom: 4px;
+
+          @media (min-width: 871px) {
+            display: none;
+          }
         }
       }
 
@@ -198,15 +218,6 @@ article.article {
         align-items: center;
         justify-content: space-between;
         border: initial;
-
-        .sideinfo__date,
-        .sideinfo__date >  span {
-          font-family: $font-secondary;
-          font-size: 14px;
-          letter-spacing: 2px;
-          font-weight: bold;
-          color: $color-dark-grey;
-        }
 
         .sideinfo__share {
           ul {

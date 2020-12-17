@@ -34,6 +34,11 @@ const serializers = {
 };
 
 const dateFormater = (date) => {
+  const d = new Date(date);
+  return d.getDate();
+};
+
+const monthFormater = (date, type) => {
   const month = new Array(
     "Ledna",
     "Února",
@@ -49,9 +54,24 @@ const dateFormater = (date) => {
     "Prosince"
   );
 
-  const d = new Date(date);
+  const shortMonth = new Array(
+    "Led",
+    "Úno",
+    "Bře",
+    "Dub",
+    "Kvě",
+    "Čer",
+    "Čvc",
+    "Srp",
+    "Zář",
+    "Říj",
+    "List",
+    "Pro"
+  );
 
-  return d.getDate() + ". " + month[d.getMonth()] + " " + d.getFullYear();
+  const d = new Date(date);
+  const yearString = d.getFullYear().toString();
+  return type === "short" ? shortMonth[d.getMonth()] + " " + yearString.slice(2) : month[d.getMonth() + " " +  yearString]
 };
 
 export const ArticleDetail = ({ post }) => (
@@ -89,8 +109,12 @@ export const ArticleDetail = ({ post }) => (
 
     <div className={styles["article__main"]}>
       <div className={styles["main__sideinfo"]}>
-        <div className={styles["sideinfo__date"]}>
-          31 <span>PRO</span>
+        <div className={classnames(styles["sideinfo__date"], styles["sideinfo__date--desktop"])}>
+          {dateFormater(post.publishedAt)}
+          <span>{monthFormater(post.publishedAt, "short")}</span>
+        </div>
+        <div className={classnames(styles["sideinfo__date"], styles["sideinfo__date--mobile"])}>
+          {dateFormater(post.publishedAt)} {monthFormater(post.publishedAt)}
         </div>
         <div className={styles["sideinfo__share"]}>
           <ul>
