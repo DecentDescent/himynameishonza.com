@@ -51,9 +51,8 @@ export function readingTime(data) {
       wordCount = wordCount + paragraphs.text.split(" ").length;
     });
   });
-  humanTime = Math.round(wordCount / 250);
+  humanTime = Math.round(wordCount / 150);
 
-  console.log(humanTime);
   if (humanTime < 2) {
     finalTime = "Čtení na minutu";
   }
@@ -65,8 +64,6 @@ export function readingTime(data) {
   if (humanTime > 4) {
     finalTime = "Čtení na " + humanTime + " minut";
   }
-
-  console.log(finalTime);
 
   return finalTime;
 }

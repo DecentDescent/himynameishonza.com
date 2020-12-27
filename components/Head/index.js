@@ -11,7 +11,7 @@ const Index = (props) => (
     </title>
     <meta
       name="description"
-      content={props.excerpt ? props.excerpt : "Hi My Name is Honza"}
+      content={props.description ? props.description : "Hi My Name is Honza"}
     />
     <meta
       property="og:title"
@@ -23,9 +23,9 @@ const Index = (props) => (
     />
     <meta
       property="og:description"
-      content={props.excerpt ? props.excerpt : "Hi My Name is Honza"}
+      content={props.description ? props.description : "Hi My Name is Honza"}
     />
-    <meta property="og:image" content="/static/og.jpg" />
+    <meta property="og:image" content={props.image ? props.image : ""} />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta property="og:type" content="website" />
     <link

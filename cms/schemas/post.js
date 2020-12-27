@@ -18,10 +18,10 @@ export default {
       },
     },
     {
-      name: "kategorie",
-      title: "Kategorie",
+      name: "category",
+      title: "Rubrika",
       type: "array",
-      of: [{ type: "reference", to: { type: "kategorie" } }],
+      of: [{ type: "string" }],
     },
     {
       title: "Poster",
@@ -66,6 +66,11 @@ export default {
     {
       name: "metaDescription",
       title: "META Description",
+      type: "string",
+    },
+    {
+      name: "facebookComments",
+      title: "Komentáře",
       type: "string",
     },
     {

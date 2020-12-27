@@ -8,7 +8,7 @@ const IndexPage = ({ posts }) => {
     return "Loading";
   }
 
-  return <LayoutHome data={posts.result} />;
+  return <LayoutHome />;
 };
 
 IndexPage.getInitialProps = async ({ req }) => {

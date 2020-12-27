@@ -10,19 +10,29 @@
   margin: 0 auto;
   display: grid;
   padding: 64px 30px;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
 
-  .footer__center {
-    text-align: center;
+  @media (max-width: 870px) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .footer__left {
+    text-align: left;
     font-family: $font-secondary;
     text-transform: uppercase;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     color: $color-border;
     font-weight: bold;
     font-size: 12px;
     letter-spacing: 1px;
+
+    @media (max-width: 870px) {
+      justify-content: center;
+      padding-top: 24px;
+    }
   }
 
   .footer__right {
@@ -30,6 +40,10 @@
     align-items: flex-end;
     justify-content: center;
     flex-direction: column;
+
+    @media (max-width: 870px) {
+      align-items: center;
+    }
 
     ul.social {
       padding: 0 0 4px;

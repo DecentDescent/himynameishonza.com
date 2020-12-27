@@ -2,12 +2,21 @@
 
 .header {
   width: 100%;
-  margin-bottom: 64px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 998;
+
+  @media (max-width: $breakpoint-mobile) {
+    width: 100%;
+    height: 64px;
+    background: $color-coal;
+  }
 
   .header__logo,
   .header__nav {
-    width: 92px;
-    height: 92px;
+    width: 64px;
+    height: 64px;
     background-color: $color-coal;
     position: absolute;
     top: 0;
@@ -17,6 +26,11 @@
     cursor: pointer;
     transition: all 0.24s;
 
+    @media (max-width: $breakpoint-mobile) {
+      width: 48px;
+      height: 48px;
+    }
+
     svg {
       fill: $color-white;
     }
@@ -24,29 +38,32 @@
     &:hover {
       background: $color-dark-grey;
     }
-
-    @media (max-width: 870px) {
-      width: 64px;
-      height: 64px;
-    }
   }
 
   .header__logo {
     left: 0;
     border-bottom-right-radius: 20px;
 
-    svg {
-      width: 42px;
+    @media (max-width: $breakpoint-mobile) {
+      border-radius: 50%;
+      top: 8px;
+      left: 8px;
+    }
 
-      @media (max-width: 870px) {
-        width: 24px;
-      }
+    svg {
+      width: 24px;
     }
   }
 
   .header__nav {
     right: 0;
     border-bottom-left-radius: 20px;
+
+    @media (max-width: $breakpoint-mobile) {
+      border-radius: 50%;
+      top: 8px;
+      right: 8px;
+    }
 
     svg {
       width: 24px;

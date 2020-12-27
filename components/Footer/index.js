@@ -6,11 +6,9 @@ export default class Footer extends React.Component {
       <footer className={styles["footer"]}>
         <div className={styles["footer__container"]}>
           <div className={styles["footer__left"]}>
-            <a href={process.env.URL_PATREON}>patreon</a>
-          </div>
-          <div className={styles["footer__center"]}>
             &copy; 2020 himynameishonza.com
           </div>
+
           <div className={styles["footer__right"]}>
             <ul className={styles["social"]}>
               <li>

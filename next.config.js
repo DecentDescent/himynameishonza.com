@@ -20,8 +20,10 @@ module.exports = withPlugins(
       cssModules: true,
     }),
   ],
-  {images: {
-    domains: ['cdn.sanity.io'],
-    deviceSizes: [640, 960, 1200],
-  }}  
+  {
+    images: {
+      domains: ["cdn.sanity.io"],
+      deviceSizes: [640, 960, 1200, 1440],
+    },
+  }
 );

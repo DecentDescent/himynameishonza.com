@@ -1,7 +1,7 @@
 import { withRouter, useRouter } from "next/router";
 import { getPost } from "../api/posts";
 import { useState, useEffect } from "react";
-import { LayoutPost, Layout404 } from "../components/Layout";
+import { LayoutPost } from "../components/Layout";
 import "../styles/global.scss";
 
 const Post = ({ data }) => {
@@ -16,7 +16,7 @@ const Post = ({ data }) => {
     );
   }, [id]);
 
-  return postData ? <LayoutPost data={postData} /> : <Layout404 />;
+  return postData ? <LayoutPost data={postData} /> : "";
 };
 
 Post.getInitialProps = async ({ req }) => {

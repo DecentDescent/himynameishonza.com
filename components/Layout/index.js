@@ -1,51 +1,48 @@
-import { ArticleHome, ArticleDetail, Article404 } from "../Article";
+import { ArticleHome, ArticleDetail } from "../Article";
 import Head from "../Head";
 import Header from "../Header";
-import Pagination from "../Pagination";
-import Footer from "../Footer";
+import ReactGA from "react-ga";
 
-export class Layout404 extends React.Component {
-  render() {
-    return (
-      <>
-        <Head />
-        <Header />
-        <main class>
-          <Article404 />
-        </main>
-        <Footer />
-      </>
+export class LayoutHome extends React.Component {
+  componentDidMount() {
+    ReactGA.initialize("UA-176555731-1");
+    ReactGA.pageview(
+      window.location.pathname + window.location.search,
+      [],
+      "Homepage"
     );
   }
-}
-export class LayoutHome extends React.Component {
+
   render() {
     return (
       <>
         <Head />
         <Header />
-        <main>
+        {/* <main>
           {this.props.data.map((p, index) => (
             <ArticleHome key={index} post={p} />
           ))}
-        </main>
-        <Footer />
+        </main> */}
       </>
     );
   }
 }
 
 export class LayoutPost extends React.Component {
+  componentDidMount() {
+    ReactGA.initialize("UA-176555731-1");
+    ReactGA.pageview(
+      window.location.pathname + window.location.search,
+      [],
+      this.props.data.metaTitle
+    );
+  }
+
   render() {
     return (
       <main>
-        <Head
-          title={this.props.data.metaTitle}
-          excerpt={this.props.data.metaDescription}
-        />
         <Header />
         <ArticleDetail post={this.props.data} />
-        <Footer />
       </main>
     );
   }
