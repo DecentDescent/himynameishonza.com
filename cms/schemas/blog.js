@@ -1,8 +1,14 @@
 export default {
-  name: "post",
-  title: "Post",
+  name: "blog",
+  title: "Blog",
   type: "document",
   fields: [
+    {
+      name: "categoryName",
+      title: "Kategorie",
+      type: "string",
+      readOnly: true,
+    },
     {
       name: "title",
       title: "Title",
@@ -18,12 +24,6 @@ export default {
       },
     },
     {
-      name: "category",
-      title: "Rubrika",
-      type: "array",
-      of: [{ type: "string" }],
-    },
-    {
       title: "Poster",
       name: "poster",
       type: "image",
@@ -32,17 +32,9 @@ export default {
       },
       fields: [
         {
-          name: "caption",
-          type: "string",
-          title: "Popis",
-          options: {
-            isHighlighted: true,
-          },
-        },
-        {
           name: "attribution",
           type: "string",
-          title: "Attribution",
+          title: "Autor",
         },
       ],
     },
@@ -84,4 +76,7 @@ export default {
       type: "blockContent",
     },
   ],
+  initialValue: {
+    categoryName: "Blog",
+  },
 };

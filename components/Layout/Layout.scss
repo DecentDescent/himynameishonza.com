@@ -1,0 +1,70 @@
+@import "../../styles/variables";
+
+.archive {
+  padding: 72px 32px 32px;
+
+  .archive__title {
+    width: 100%;
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto;
+
+    h1 {
+      text-align: center;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.1;
+      max-width: 18ch;
+      color: $color-coal;
+      font-family: $font-primary;
+      margin: 24px auto;
+
+      @media (max-width: $breakpoint-mobile) {
+        font-size: 38px;
+      }
+    }
+
+    border-bottom: $color-border 1px solid;
+    padding: 24px;
+    text-align: center;
+    position: relative;
+    margin-bottom: 48px;
+
+    span {
+      font-size: 15px;
+      font-family: $font-tertiary;
+      color: $color-light-grey;
+
+      a {
+        color: $color-coal;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    &:after {
+      width: 16px;
+      height: 16px;
+      border: 1px solid $color-border;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      content: "·";
+      font-size: 12px;
+      font-weight: bold;
+      font-family: $font-secondary;
+      color: $color-border;
+      position: absolute;
+      background: $color-smoke-white;
+      left: 50%;
+      margin-left: -8px;
+    }
+
+    &:after {
+      bottom: -10px;
+    }
+  }
+}

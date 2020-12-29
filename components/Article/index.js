@@ -80,8 +80,8 @@ export function ArticleDetail({ post }) {
                 loading="lazy"
                 nopin="nopin"
               />
-              {post.poster.caption ? (
-                <figcaption>{post.poster.caption}</figcaption>
+              {post.poster.attribution ? (
+                <figcaption>{post.poster.attribution}</figcaption>
               ) : null}
             </figure>
           ) : null}
@@ -93,11 +93,13 @@ export function ArticleDetail({ post }) {
           </div>
 
           <div className={styles["article__info"]}>
-            {dateFormater(post.publishedAt)}. {monthFormater(post.publishedAt)}
+            {post.categoryName !== "Blog"
+              ? dateFormater(post.publishedAt) +
+                ". " +
+                monthFormater(post.publishedAt)
+              : "Bezčasí"}
             <span>|</span>
-            {/* <a href={"/rubrika/" + post.category[0].toLowerCase()}> */}
-            {post.category[0]}
-            {/* </a> */}
+            {post.categoryName}
             <span>|</span>
             {readingTime(post.body)}
           </div>
@@ -114,8 +116,8 @@ export function ArticleDetail({ post }) {
                   loading="lazy"
                   nopin="nopin"
                 />
-                {post.poster.caption ? (
-                  <figcaption>{post.poster.caption}</figcaption>
+                {post.poster.attribution ? (
+                  <figcaption>{post.poster.attribution}</figcaption>
                 ) : null}
               </figure>
             </div>
@@ -157,26 +159,7 @@ export function ArticleDetail({ post }) {
                       <Icon icon="twitter" />
                     </a>
                   </li>
-                  {/* <li>
-                    <a
-                      href={sharingLink("link", post.slug.current)}
-                      target="_blank"
-                    >
-                      <Icon icon="link" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <Icon icon="reader" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href={sharingLink("print")} target="_blank">
-                      <Icon icon="print" />
-                    </a>
-                  </li> */}
                 </ul>
-                {/* <div className={styles["share__tooltip"]}>Odkaz zkopírován</div> */}
               </div>
             </div>
           </div>
@@ -186,13 +169,38 @@ export function ArticleDetail({ post }) {
   );
 }
 
-export function Article404() {
-  const [printModalState, setPrintModalState] = useState(false);
-  return (
-    <>
-      <h1>Error</h1>
-    </>
-  );
-}
-
-export const ArticleHome = ({ post }) => <Link href={post.slug.current}></Link>;
+export const ArticleHome = ({ post }) => (
+  <Link href={"/" + post.slug.current}>
+    <article className={styles["home-article"]}>
+      <div className={styles["home-article__content"]}>
+        <h1>{post.title}</h1>
+        {console.log(post)}
+        <div className={styles["home-article__info"]}>
+          {post.categoryName !== "Blog"
+            ? dateFormater(post.publishedAt) +
+              ". " +
+              monthFormater(post.publishedAt)
+            : "Bezčasí"}
+          <span>|</span>
+          {post.categoryName}
+          <span>|</span>
+          {readingTime(post.body)}
+        </div>
+        <BlockContent blocks={post.excerpt} serializers={serializers} />
+      </div>
+      <div className={styles["home-article__hero"]}>
+        <figure>
+          <Image
+            alt="Image"
+            src={urlFor(post.poster).width().url()}
+            layout="fill"
+            objectFit="cover"
+            quality={process.env.IMAGE_QUALITY}
+            loading="lazy"
+            nopin="nopin"
+          />
+        </figure>
+      </div>
+    </article>
+  </Link>
+);

@@ -124,8 +124,8 @@ article.article {
             width: 100%;
             padding-top: 70%;
             box-shadow: 0 2px 8px rgba($color-dark, 0.3);
-            background: rgba($color-light, 0.2);
             border-radius: 4px;
+            background: $color-coal;
 
             img {
               border-radius: 4px;
@@ -152,6 +152,17 @@ article.article {
         line-height: 1.8;
         em {
           font-style: italic;
+        }
+
+        a {
+          color: $color-dark-grey;
+          text-decoration: none;
+          border-bottom: 2px dotted $color-dark-grey;
+          transition: all 0.24s;
+
+          &:hover {
+            color: $color-dark-aqua;
+          }
         }
       }
 
@@ -289,6 +300,102 @@ article.article {
             font-weight: normal;
             font-family: $font-secondary;
           }
+        }
+      }
+    }
+  }
+}
+
+.home-article {
+  width: 100%;
+  max-width: 850px;
+  box-sizing: border-box;
+  margin: 16px auto;
+  padding: 32px;
+  border-radius: 4px;
+  background: $color-light;
+  cursor: pointer;
+  transition: all 0.24s;
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  column-gap: 32px;
+
+  &:hover {
+    background: #fff;
+    box-shadow: 0 2px 5px lighten($color-dark, 70%);
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    grid-template-columns: 1fr;
+    background: #fff;
+    box-shadow: 0 2px 5px lighten($color-dark, 70%);
+    margin: 24px auto;
+  }
+
+  .home-article__content {
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 16px;
+      color: $color-coal;
+      font-family: $font-primary;
+
+      @media (max-width: $breakpoint-mobile) {
+        font-size: 28px;
+      }
+    }
+
+    p {
+      font-size: 16px;
+      font-family: $font-tertiary;
+      color: $color-dark-grey;
+      margin: 24px auto;
+      line-height: 1.3;
+      em {
+        font-style: italic;
+      }
+    }
+
+    .home-article__info {
+      font-family: $font-secondary;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 12px;
+      line-height: 1.5;
+      margin: 0 auto;
+      color: $color-dark-grey;
+
+      span {
+        color: $color-border;
+        margin: 0 8px;
+      }
+
+      a {
+        text-decoration: none;
+        color: $color-dark-grey;
+      }
+    }
+  }
+
+  .home-article__hero {
+    width: 100%;
+
+    figure {
+      width: 100%;
+      position: relative;
+      margin: 0;
+
+      div {
+        position: relative !important;
+        width: 100%;
+        padding-top: 70%;
+        box-shadow: 0 2px 8px rgba($color-dark, 0.3);
+        border-radius: 4px;
+        background: $color-coal;
+
+        img {
+          border-radius: 4px;
         }
       }
     }

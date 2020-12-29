@@ -1,7 +1,7 @@
 @import "../../styles/variables";
 
 .footer {
-  border-top: 1px solid $color-border;
+  background: $color-dark;
 }
 
 .footer__container {
@@ -9,7 +9,7 @@
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  padding: 64px 30px;
+  padding: 60px 30px;
   grid-template-columns: 1fr 1fr;
 
   @media (max-width: 870px) {
@@ -24,7 +24,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    color: $color-border;
+    color: $color-dark-grey;
     font-weight: bold;
     font-size: 12px;
     letter-spacing: 1px;
@@ -60,6 +60,7 @@
         align-items: center;
         margin: 0;
         position: relative;
+        cursor: pointer;
 
         &:after {
           content: "";
@@ -80,7 +81,7 @@
 
           &:hover {
             svg {
-              fill: $color-coal;
+              fill: $color-light;
             }
           }
 

@@ -11,7 +11,11 @@ const Index = (props) => (
     </title>
     <meta
       name="description"
-      content={props.description ? props.description : "Hi My Name is Honza"}
+      content={
+        props.description
+          ? props.description
+          : "Jmenuju se Honza. Mám názor a nebojim se ho použít."
+      }
     />
     <meta
       property="og:title"
@@ -23,9 +27,16 @@ const Index = (props) => (
     />
     <meta
       property="og:description"
-      content={props.description ? props.description : "Hi My Name is Honza"}
+      content={
+        props.description
+          ? props.description
+          : "Jmenuju se Honza. Mám názor a nebojim se ho použít."
+      }
     />
-    <meta property="og:image" content={props.image ? props.image : ""} />
+    <meta
+      property="og:image"
+      content={props.image ? props.image : "/static/og.jpg"}
+    />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta property="og:type" content="website" />
     <link

@@ -1,49 +1,55 @@
 import { ArticleHome, ArticleDetail } from "../Article";
+import { useState } from "react";
 import Head from "../Head";
 import Header from "../Header";
-import ReactGA from "react-ga";
+import Footer from "../Footer";
+import Navigation from "../Navigation";
+import styles from "./Layout.scss";
 
-export class LayoutHome extends React.Component {
-  componentDidMount() {
-    ReactGA.initialize("UA-176555731-1");
-    ReactGA.pageview(
-      window.location.pathname + window.location.search,
-      [],
-      "Homepage"
-    );
-  }
-
-  render() {
-    return (
-      <>
-        <Head />
-        <Header />
-        {/* <main>
-          {this.props.data.map((p, index) => (
-            <ArticleHome key={index} post={p} />
-          ))}
-        </main> */}
-      </>
-    );
-  }
+export function LayoutHome(props) {
+  const [nav, setNav] = useState(false);
+  return (
+    <>
+      <Head />
+      <Header navToggle={() => setNav(!nav)} navState={nav} />
+      {nav ? <Navigation closeNav={() => setNav(false)} /> : null}
+      <main className={styles["archive"]}>
+        {props.data.map((p, index) => (
+          <ArticleHome key={index} post={p} />
+        ))}
+      </main>
+      <Footer />
+    </>
+  );
 }
 
-export class LayoutPost extends React.Component {
-  componentDidMount() {
-    ReactGA.initialize("UA-176555731-1");
-    ReactGA.pageview(
-      window.location.pathname + window.location.search,
-      [],
-      this.props.data.metaTitle
-    );
-  }
-
-  render() {
-    return (
-      <main>
-        <Header />
-        <ArticleDetail post={this.props.data} />
+export function LayoutCategory(props) {
+  const [nav, setNav] = useState(false);
+  return (
+    <>
+      <Head />
+      <Header navToggle={() => setNav(!nav)} navState={nav} />
+      {nav ? <Navigation closeNav={() => setNav(false)} /> : null}
+      <main className={styles["archive"]}>
+        <div className={styles["archive__title"]}>
+          <h1>{props.data[0].categoryName}</h1>
+        </div>
+        {props.data.map((p, index) => (
+          <ArticleHome key={index} post={p} />
+        ))}
       </main>
-    );
-  }
+      <Footer />
+    </>
+  );
+}
+
+export function LayoutPost(props) {
+  const [nav, setNav] = useState(false);
+  return (
+    <>
+      <Header navToggle={() => setNav(!nav)} navState={nav} />
+      {nav ? <Navigation closeNav={() => setNav(false)} /> : null}
+      <ArticleDetail post={props.data} />
+    </>
+  );
 }

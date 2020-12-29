@@ -12,9 +12,7 @@
 html,
 body {
   width: 100%;
-  overflow-y: auto;
 }
-
 body {
   margin: 0;
   background: $color-smoke-white;
@@ -36,5 +34,9 @@ body {
 
   &::-webkit-scrollbar-thumb:hover {
     background: lighten($color-dark-grey, 10%);
+  }
+
+  &.body--noscroll {
+    overflow-y: hidden;
   }
 }
