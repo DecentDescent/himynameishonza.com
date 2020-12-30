@@ -1,13 +1,21 @@
 import { ArticleHome, ArticleDetail } from "../Article";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Head from "../Head";
 import Header from "../Header";
 import Footer from "../Footer";
 import Navigation from "../Navigation";
 import styles from "./Layout.scss";
+import Category from "../../pages/rubrika/[category]";
 
 export function LayoutHome(props) {
   const [nav, setNav] = useState(false);
+
+  useEffect(() => {
+    nav
+      ? document.body.classList.add("body--noscroll")
+      : document.body.classList.remove("body--noscroll");
+  });
+
   return (
     <>
       <Head />
@@ -25,9 +33,19 @@ export function LayoutHome(props) {
 
 export function LayoutCategory(props) {
   const [nav, setNav] = useState(false);
+
+  useEffect(() => {
+    nav
+      ? document.body.classList.add("body--noscroll")
+      : document.body.classList.remove("body--noscroll");
+  });
+
   return (
     <>
-      <Head />
+      <Head
+        url={"https://himynameishonza.com/rubrika/" + props.category}
+        title={props.data[0].categoryName}
+      />
       <Header navToggle={() => setNav(!nav)} navState={nav} />
       {nav ? <Navigation closeNav={() => setNav(false)} /> : null}
       <main className={styles["archive"]}>
@@ -45,6 +63,13 @@ export function LayoutCategory(props) {
 
 export function LayoutPost(props) {
   const [nav, setNav] = useState(false);
+
+  useEffect(() => {
+    nav
+      ? document.body.classList.add("body--noscroll")
+      : document.body.classList.remove("body--noscroll");
+  });
+
   return (
     <>
       <Header navToggle={() => setNav(!nav)} navState={nav} />

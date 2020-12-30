@@ -22,7 +22,7 @@ const Index = (props) => (
       content={
         props.title
           ? props.title + " – Hi My Name is Honza"
-          : "Hi My Name Is Honza"
+          : "Hi My Name is Honza"
       }
     />
     <meta
@@ -36,6 +36,10 @@ const Index = (props) => (
     <meta
       property="og:image"
       content={props.image ? props.image : "/static/og.jpg"}
+    />
+    <meta
+      property="og:url"
+      content={props.url ? props.url : "https://himynameishonza.com"}
     />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta property="og:type" content="website" />

@@ -66,6 +66,8 @@ export function ArticleDetail({ post }) {
         title={post.metaTitle}
         description={post.metaDescription}
         image={urlFor(post.poster).width().url()}
+        url={"https://himynameishonza.com/" + post.slug.current}
+      />
       />
       <article className={styles["article"]}>
         <div className={styles["article__hero"]}>
@@ -174,7 +176,6 @@ export const ArticleHome = ({ post }) => (
     <article className={styles["home-article"]}>
       <div className={styles["home-article__content"]}>
         <h1>{post.title}</h1>
-        {console.log(post)}
         <div className={styles["home-article__info"]}>
           {post.categoryName !== "Blog"
             ? dateFormater(post.publishedAt) +

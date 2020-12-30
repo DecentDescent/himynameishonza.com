@@ -12,22 +12,22 @@ export default class Footer extends React.Component {
           <div className={styles["footer__right"]}>
             <ul className={styles["social"]}>
               <li>
-                <a href={process.env.URL_FACEBOOK}>
+                <a href="https://www.facebook.com/Hi-My-Name-is-Honza-107240174586881">
                   <Icon icon="facebook" />
                 </a>
               </li>
               <li>
-                <a href={process.env.URL_TWITTER}>
+                <a href="https://twitter.com/himynameishonza">
                   <Icon icon="twitter" />
                 </a>
               </li>
               <li>
-                <a href={process.env.URL_INSTAGRAM}>
+                <a href="https://www.instagram.com/himynameishonza/">
                   <Icon icon="instagram" />
                 </a>
               </li>
               <li>
-                <a href={process.env.URL_FLICKR}>
+                <a href="https://www.flickr.com/people/55487287@N06">
                   <Icon icon="flickr" />
                 </a>
               </li>

@@ -7,6 +7,10 @@
     width: 100%;
     height: 100%;
   }
+
+  .body--noscroll {
+    overflow-y: hidden;
+  }
 }
 
 html,
@@ -34,9 +38,5 @@ body {
 
   &::-webkit-scrollbar-thumb:hover {
     background: lighten($color-dark-grey, 10%);
-  }
-
-  &.body--noscroll {
-    overflow-y: hidden;
   }
 }

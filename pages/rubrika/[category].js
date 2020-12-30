@@ -20,7 +20,11 @@ const IndexPage = ({ posts }) => {
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, [category]);
 
-  return postData ? <LayoutCategory data={postData} /> : <Loading />;
+  return postData ? (
+    <LayoutCategory data={postData} category={category} />
+  ) : (
+    <Loading />
+  );
 };
 
 IndexPage.getInitialProps = async ({ req }) => {

@@ -2,7 +2,7 @@ const quotes = [
   {
     content: (
       <p>
-        „Špinavý nádro Krakow Glowny
+        „Špinavý nádro Kraków Glowny
         <br />
         musí ráno nasytit
         <br />
@@ -114,9 +114,38 @@ const quotes = [
     image: "/static/quotes/bush.jpg",
   },
   {
-    content: <p>„Je čas, aby lidská rasa vstoupila do sluneční soustavy.“</p>,
+    content: (
+      <p>„Nastal čas, aby lidská rasa vstoupila do sluneční soustavy.“</p>
+    ),
     author: "George W. Bush",
     image: "/static/quotes/bush.jpg",
+  },
+  {
+    content: (
+      <p>
+        „Nikdy jsem nechtěla do Japonska. Jednoduše proto, že nejím ryby. A vím,
+        že ryby jsou tam v Africe velmi oblíbené.”
+      </p>
+    ),
+    author: "Britney Spears",
+    image: "/static/quotes/spears.jpg",
+  },
+  {
+    content: <p>„Musíme se ptát: Učejí se naše děti?“</p>,
+    author: "George W. Bush",
+    image: "/static/quotes/bush.jpg",
+  },
+  {
+    content: (
+      <p>
+        „Víme, že jsou tu známé známé: To jsou věci, o kterých víme, že je víme.
+        Jsou tu také známé neznámé: To jsou věci, o kterých víme, že je nevíme.
+        Pak jsou tu ale neznámé neznámé: To jsou ty věci, o kterých nevíme, že
+        je nevíme.“
+      </p>
+    ),
+    author: "Donald Rumsfeld",
+    image: "/static/quotes/rumsfeld.jpg",
   },
 ];
 
