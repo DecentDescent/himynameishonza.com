@@ -40,10 +40,9 @@
   justify-content: center;
   top: 0;
   left: 0;
-  animation: fadeIn 0.5s forwards;
+  animation: fadeIn 0.5s backwards;
   margin: auto;
-  z-index: 2;
-  background: $color-coal;
+  z-index: 997;
 
   article.navigation__quote {
     transform: translateX(50vw);
@@ -101,11 +100,11 @@
     box-sizing: border-box;
     overflow: auto;
     display: flex;
-    background: $color-coal;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     transform: translateX(-50vw);
     animation: navOpenRight 0.5s forwards;
     z-index: 2;
+    background-color: $color-coal;
 
     @media (max-width: $breakpoint-mobile) {
       width: 100vw;
