@@ -315,7 +315,7 @@ article.article {
   border-radius: 4px;
   background: $color-light;
   cursor: pointer;
-  transition: all 0.24s;
+  transition: background 0.24s;
   display: grid;
   grid-template-columns: 1.3fr 0.7fr;
   column-gap: 32px;

@@ -12,7 +12,7 @@ export default class Footer extends React.Component {
           <div className={styles["footer__right"]}>
             <ul className={styles["social"]}>
               <li>
-                <a href="https://www.facebook.com/Hi-My-Name-is-Honza-107240174586881">
+                <a href="https://www.facebook.com/himynameishonzacom/">
                   <Icon icon="facebook" />
                 </a>
               </li>

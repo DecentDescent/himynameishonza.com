@@ -24,7 +24,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: all 0.24s;
+    transition: background 0.24s;
 
     @media (max-width: $breakpoint-mobile) {
       width: 48px;

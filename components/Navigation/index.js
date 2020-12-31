@@ -50,6 +50,11 @@ const Navigation = (props) => {
                   </Link>
                 </li>
                 <li onClick={props.closeNav}>
+                  <Link href="/rubrika/texty">
+                    <a>Texty</a>
+                  </Link>
+                </li>
+                <li onClick={props.closeNav}>
                   <Link href="/rubrika/blog">
                     <a>Blog</a>
                   </Link>

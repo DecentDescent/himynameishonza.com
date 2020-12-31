@@ -5,8 +5,9 @@ import blog from "./blog";
 import film from "./film";
 import povidky from "./povidky";
 import knihy from "./knihy";
+import texty from "./texty";
 
 export default createSchema({
   name: "default",
-  types: schemaTypes.concat([blog, film, povidky, knihy, blockContent]),
+  types: schemaTypes.concat([blog, film, povidky, knihy, texty, blockContent]),
 });
