@@ -166,6 +166,17 @@ article.article {
         }
       }
 
+      .article__rating {
+        padding: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+          width: 24px;
+          fill: $color-light-grey;
+        }
+      }
       .article__footer {
         max-width: 350px;
         margin: 64px auto;

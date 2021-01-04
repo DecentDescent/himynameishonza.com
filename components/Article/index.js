@@ -68,7 +68,6 @@ export function ArticleDetail({ post }) {
         image={urlFor(post.poster).width().url()}
         url={"https://himynameishonza.com/" + post.slug.current}
       />
-      />
       <article className={styles["article"]}>
         <div className={styles["article__hero"]}>
           {post.poster.asset ? (
@@ -124,6 +123,16 @@ export function ArticleDetail({ post }) {
               </figure>
             </div>
             <BlockContent blocks={post.body} serializers={serializers} />
+
+            {post.rating ? (
+              <div className={styles["article__rating"]}>
+                <Icon icon={post.rating > 0 ? "score-on" : "score-off"} />
+                <Icon icon={post.rating > 1 ? "score-on" : "score-off"} />
+                <Icon icon={post.rating > 2 ? "score-on" : "score-off"} />
+                <Icon icon={post.rating > 3 ? "score-on" : "score-off"} />
+                <Icon icon={post.rating > 4 ? "score-on" : "score-off"} />
+              </div>
+            ) : null}
 
             <div className={styles["article__footer"]}>
               {post.facebookComments ? (
